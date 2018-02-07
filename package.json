@@ -4,15 +4,26 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "start-reset": "npm run start -- --reset-cache",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "flow": "glow"
   },
   "dependencies": {
     "react": "16.2.0",
-    "react-native": "0.52.2"
+    "react-native": "0.52.2",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "babel-cli": "^6.26.0",
     "babel-jest": "22.1.0",
     "babel-preset-react-native": "4.0.0",
+    "flow-bin": "^0.61.0",
+    "glow": "^1.1.2",
     "jest": "22.1.4",
     "react-test-renderer": "16.2.0"
   },
