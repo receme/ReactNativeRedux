@@ -29,7 +29,6 @@ export const fetchWeatherData = (weatherService) => (
 
         weatherService.fetchWeatherData()
             .then((weatherInfo) => {
-                Alert.alert(weatherInfo);
                 dispatch(fetchDataSuccess(weatherInfo));
             })
             .catch(() => dispatch(fetchDataError));

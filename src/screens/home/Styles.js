@@ -6,5 +6,10 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+    },
+    weatherText: {
+        fontSize: 20,
+        margin: 20,
+        textAlign: 'center'
     }
 });

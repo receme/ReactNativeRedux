@@ -5,14 +5,13 @@ import AppConfig from '../config/AppConfig';
 export default class DarkskyApiService {
 
     constructor() {
-
     }
 
     fetchWeatherData(onSuccess, onFailure) {
         return HttpService.getContent(AppConfig.API_URL)
             .then((data) => {
                 var currentWeather = JSON.stringify(data.currently);
-                return currentWeather;
+                return JSON.parse(currentWeather);
             })
             .catch((err) => err);
 
