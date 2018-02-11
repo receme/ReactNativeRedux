@@ -24,12 +24,14 @@ const fetchDataError = () => (
 
 export const fetchWeatherData = (weatherService) => (
     (dispatch: Function) => {
-        Alert.alert("Start fetching weatherData");
 
         dispatch(fetchDataRequest());
 
         weatherService.fetchWeatherData()
-            .then((weatherInfo) => dispatch(fetchDataSuccess(weatherInfo)))
+            .then((weatherInfo) => {
+                Alert.alert(weatherInfo);
+                dispatch(fetchDataSuccess(weatherInfo));
+            })
             .catch(() => dispatch(fetchDataError));
     }
 );

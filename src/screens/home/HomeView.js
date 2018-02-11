@@ -14,7 +14,7 @@ export default class HomeView extends Component {
             <View style={Styles.container}>
                 <Text></Text>
 
-                <Button title="Fetch Data" onPress={this.props.fetchData} />
+                <Button title="Fetch Data" onPress={this.props.fetchWeatherData} />
             </View>
 
         );

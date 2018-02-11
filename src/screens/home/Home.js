@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
 import HomeView from './HomeView';
+import { Alert } from 'react-native';
+import DarkskyApiService from '../../services/DarkskyApiService';
 
 
 export default class Home extends Component {
 
     constructor(props) {
         super(props);
-        const {
-            isLoading,
-            error,
-            fetchData,
-            weatherInfo,
-        } = props;
+        // const {
+        //     isLoading,
+        //     error,
+        //     fetchWeatherData,
+        //     weatherInfo,
+        // } = props;
     }
 
     render() {
+
         return (
+
             <HomeView
-                isLoading={this.isLoading}
-                error={this.error}
-                fetchData={this.fetchData}
-                weatherInfo={this.weatherInfo}
+                isLoading={this.props.isLoading}
+                error={this.props.error}
+                fetchWeatherData={this.props.fetchWeatherData}
+                weatherInfo={this.props.weatherInfo}
             />
         );
     }
+
 }
