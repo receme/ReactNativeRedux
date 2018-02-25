@@ -7,7 +7,7 @@ export default class DarkskyApiService {
     constructor() {
     }
 
-    fetchWeatherData(onSuccess, onFailure) {
+    fetchWeatherData() {
         return HttpService.getContent(AppConfig.API_URL)
             .then((data) => {
                 var currentWeather = JSON.stringify(data.currently);

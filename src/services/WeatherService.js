@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default class WeatherService {
 
     static serviceController;
 
     constructor(_serviceController) {
-        serviceController = _serviceController;
+        this.serviceController = _serviceController;
     }
 
     fetchWeatherData() {
-        return Promise.resolve(serviceController.fetchWeatherData());
+        return Promise.resolve(this.serviceController.fetchWeatherData());
     }
 
 }

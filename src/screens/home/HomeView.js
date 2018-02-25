@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Button, Text, ActivityIndicator, StyleSheet} from 'react-native';
+import {ActivityIndicator, Button, View} from 'react-native';
 import Styles from './Styles';
 
 export default class HomeView extends Component {
@@ -16,33 +16,10 @@ export default class HomeView extends Component {
             error,
             fetchWeatherData,
             weatherInfo,
+            getErrorMessage,
+            getWeatherInfo,
+            hasWeatherData
         } = this.props;
-
-        const getErrorMessage = () => (
-            <Text style={styles.errorText}>
-                An Error occured when fetching data
-            </Text>
-        );
-
-        const getWeatherInfo = (weatherInfo) => {
-
-            const {summary, temperature, message} = weatherInfo;
-
-            const info = (message != null && message.length > 0) ? message
-                : (temperature ? `${Math.floor(temperature)} deg, ${summary}` : 'No Weather Info Available. Make sure you provided a valid API key in the `config.js` file.');
-
-            // const info = temperature
-            //     ? `${Math.floor(temperature)} deg, ${summary}`
-            //     : 'No Weather Info Available. Make sure you provided a valid API key in the `config.js` file.';
-
-            return (
-                <Text style={Styles.weatherText}>
-                    {info}
-                </Text>
-            );
-        };
-
-        const hasWeatherData = Object.keys(weatherInfo).length;
 
         return (
             <View style={Styles.container}>

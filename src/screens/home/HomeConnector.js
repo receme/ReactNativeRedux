@@ -8,8 +8,8 @@ import DarkskyApiService from '../../services/DarkskyApiService';
 const mapStateToProps = (state: Object) => getWeatherSelector(state);
 
 const mapDispatchToProps = (dispatch: Function) => ({
-    fetchWeatherData: () => {
 
+    fetchWeatherData: () => {
         var weatherService = new WeatherService(new DarkskyApiService());
         dispatch(fetchWeatherData(weatherService));
 
